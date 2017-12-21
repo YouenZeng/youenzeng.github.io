@@ -106,10 +106,77 @@ The ExceptionDispatchInfo object stores the stack trace information and Watson i
 ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
 ```
 
+此时异常如下,原始异常被追加上去了:
+
+```
+exception stacktrace:
+   at PluginTest.Processor.Runner(DateTime dateTime)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Canary.PluginRunner.ExecuteCore() in xxx\Canary\PluginRunner.cs:line 32
+   at Canary.Program.Main(String[] args) in xxx\Canary\Program.cs:line 19
+```
+
+SO大佬在2010年指出这是一个Windows CLR的限制:
+`This is a well known limitation in the Windows version of the CLR. It uses Windows' built-in support for exception handling (SEH). Problem is, it is stack frame based and a method has only one stack frame. You can easily solve the problem by moving the inner try/catch block into another helper method, thus creating another stack frame. Another consequence of this limitation is that the JIT compiler won't inline any method that contains a try statement.`
+
+那么Linux下呢, 我在WSL下看了看是确实没有这个问题.
+```
+➜  CanaryNetCore git:(master) ✗ dotnet run
+
+Unhandled Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Exception: Hold on..
+   at PluginTestCore.Processor.Runner(DateTime dateTime)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at CanaryNetCore.PluginRunner.ExecuteCore() in /mnt/c/DevLab/Canary/CanaryNetCore/PluginRunner.cs:line 33
+   at CanaryNetCore.Program.Main(String[] args) in /mnt/c/DevLab/Canary/CanaryNetCore/Program.cs:line 18
+   
+➜  CanaryNetCore git:(master) ✗ cat cat PluginRunner.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.ExceptionServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CanaryNetCore
+{
+    class PluginRunner
+    {
+        public void ExecuteCore()
+        {
+            Assembly assembly = Assembly.LoadFrom("PluginTestCore.dll");
+
+            object obj = assembly.CreateInstance("PluginTestCore.Processor");
+            MethodInfo m = obj.GetType().GetMethod("Runner");
+
+            if (m != null)
+            {
+                object[] methodParams = new object[] { DateTime.Now };
+                try
+                {
+                    var result = m.Invoke(obj, methodParams);
+                }
+                catch (Exception ex)
+                {
+                    //if (ex.InnerException != null)
+                    //{
+                    //    ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+                    //}
+                    throw;
+                }
+
+            }
+        }
+    }
+}
+
+```
+
 第二种方法是直接throw,在外面处理InnerException, 由于我不想修改外部代码, 所以使用了第一种方法.
-`
-The recommended way to re-throw an exception is to simply use the throw statement in C# and the Throw statement in Visual Basic without including an expression. This ensures that all call stack information is preserved when the exception is propagated to the caller. 
-`
+`The recommended way to re-throw an exception is to simply use the throw statement in C# and the Throw statement in Visual Basic without including an expression. This ensures that all call stack information is preserved when the exception is propagated to the caller.`
 
 参考:
 1. https://stackoverflow.com/questions/57383/in-c-how-can-i-rethrow-innerexception-without-losing-stack-trace

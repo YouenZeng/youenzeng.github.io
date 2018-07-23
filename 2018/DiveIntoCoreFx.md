@@ -2,22 +2,24 @@
 
 Dotnet Core最近发布了2.1版本
 
+## Void 是个结构体（Struct)
 ```
 Public struct Void{}
 ```
 
-```
-AggragationException , can be flatten, merge message by (). Consist inner exceptions in a ReadOnlyCollection, every time copy a new one. --> See how stack trace generated
-```
+## AggregateException
 
-```
+AggregateException 是伴随着async/await引入的新的类型, 有个`Flatten`方法, 可以将内部异常展开（貌似是BFS算法）. 在调用时，将内部异常保存在一个`ReadOnlyCollection`中,不可改变. --> See how stack trace generated
+
+
+## DBNull
+
 DbNull.Value is an instance of DbNull type. ToString() => string.Empty
 Inheriated from Iconvertible, all other convertation will throw exception. InvalidCastException
 
-```
+## DateTime
 
 ```
-DateTime. 
 Plenty of cache, Days per 100 years/400years 
 dates to 1601/1899/1970/10000  -> https://en.wikipedia.org/wiki/Epoch_(reference_date)
 Ticks per ms/s/Minute/Hour/Day

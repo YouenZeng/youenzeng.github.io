@@ -14,38 +14,38 @@
 
 # 自我评价
 
-XXXX - WIP
+9年.NET后端开发经验，熟悉.NET技术栈,有分析与解决相关问题的能力。
 
 # 工作经历
 
 ## ADP （ 2016年6月 ~ 至今） 高级软件工程师，架构师
 
+### MyADP系统 HR功能模块 Payroll模块 休假(eLeave)模块
+
+- 参与设计后端项目框架(ASP.NET Web API2，Nhinernate，SQL Server, Redis，Hangfire)
+- 编码与代码审阅工作
+- 设计了工作流引擎，与系统功能继承，并支持常规的审批工作流
+- 研究原有的iHCM platform功能，开发适配接口，使其可以用于MyADP eLeave系统
+
 ### iHCM eLeave 请假系统
 
-- 维护现有功能。 优化现有代码流程，使其可以利用缓存加速，将假期额度发放功能由50分钟/5000人提升至2分钟/5000人，优化薪资系统对接的接口，从20分钟/5000人提升至1分钟/5000人。合并部分iHCM platform上游代码，提高系统性能。
-- 开发新功能。
-- 研究原有的iHCM platform功能，开发适配接口，使其可以用于MyADP eLeave系统。
+- 维护现有功能。 优化现有代码逻辑，使其可以利用缓存加速，将假期额度发放功能由50分钟/5000人提升至2分钟/5000人，优化薪资系统对接的接口，从20分钟/5000人提升至1分钟/5000人
+- 合并部分iHCM platform上游代码，提高系统性能
+- 开发新功能 (ASP.NET MVC/Web API, SQL Server, Rabbit MQ)
 - 集成休假功能至微信公众号
-
-### MyADP系统 HR功能模块 Payroll模块
-
-- 参与设计后端项目框架(ASP.NET WebAPI2，Nhinernate，SQL Server,Redis，HangFire)
-- 编码与代码审阅工作。
-- 设计了工作流引擎，与系统功能继承，并支持常规的审批工作流。
 
 ### 数据导入服务
 
 - 重写WinForm版本的遗留系统
-- 设计项目框架， 使用类似asp.net core 的Middleware机制，实现数据导入的逻辑隔离与部分定制， (.NET Core 3.0, Dapper, Redis，HangFire)
+- 设计项目框架， 参考asp.net core 的Middleware机制，实现数据导入的逻辑隔离与部分定制， (.NET Core 3.1, Dapper, SQL Server, Redis，Hangfire)
 - 部分编码工作
 
 ### 其他项目
 
 - Message hub - 基于SignalR的服务端消息推送中心
 - GDPR Scheduler - 通过REST API调度Jenkins做一些GDPR相关的数据清理工作
-- NSAPI - 基于LDAP的用户认证接口服务
-- IDAM - MyADP系统使用的用户账号管理服务
-- DocHub - 基于SpringBoot的Mongo GridFS的文件服务（维护）
+- NSAPI/IDAM - 基于LDAP的用户认证与管理服务
+- DocHub - 基于SpringBoot的Mongo GridFS的文件管理服务（维护）
 
 ### 得奖
 
@@ -56,9 +56,9 @@ XXXX - WIP
 
 ### MIS系统
 
-- 开发公司信息管理系统（MIS）功能，用于支持公司的房地产评估流程；
-- 开发一些其他业务需求相关的项目；
-- 解决公司系统遗留的性能问题，BUG等。
+- 开发公司信息管理系统（MIS）功能，用于支持公司的房地产评估流程
+- 开发一些其他业务需求相关的项目
+- 解决公司系统遗留的性能问题，BUG等
 
 ### 得奖
 
@@ -71,8 +71,7 @@ XXXX - WIP
 
 # 专业技能
 
-- 8年后端开发经验
+- 9年后端开发经验
 - 后端框架：.NET Framework/.NET Core/ ASP.NET / ASP.NET Core
-- 前端工具：Bower/Gulp/SaSS/LeSS/PhoneGap
 - 数据库相关：SQL Server/Redis
-- 版本管理、文档和自动化部署工具：Git/TFS
+- 版本管理、文档和自动化部署工具：Git/Jenkins

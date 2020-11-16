@@ -7,20 +7,20 @@
 # 个人信息
 
 - 曾友恩/男/1989
-- 本科/安徽工业大学
+- 本科/安徽工业大学/计算机科学与技术
 - Blog：https://www.darkerror.com
 - Github：https://github.com/YouenZeng
-- StackOverflow: http://stackoverflow.com/users/1179950/zen
+- StackOverflow: https://stackoverflow.com/users/1179950/zen
 
 # 自我评价
 
-9年.NET后端开发经验，熟悉.NET技术栈,有分析与解决相关问题的能力。
+9年.NET后端开发经验，熟悉.NET技术栈，有分析与解决相关问题的能力。
 
 # 工作经历
 
 ## ADP （ 2016年6月 ~ 至今） 高级软件工程师，架构师
 
-### MyADP系统 HR功能模块 Payroll模块 休假(eLeave)模块
+### MyADP系统后端 HR功能模块 Payroll模块 休假(eLeave)模块
 
 - 参与设计后端项目框架(ASP.NET Web API2，Nhinernate，SQL Server, Redis，Hangfire)
 - 编码与代码审阅工作

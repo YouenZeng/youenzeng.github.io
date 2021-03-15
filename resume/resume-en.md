@@ -7,13 +7,15 @@
 
 # 个人信息
 
+- 曾友恩/男/1989
 - 本科/安徽工业大学/计算机科学与技术
-- Blog：https://www.darkerror.com
-- StackOverflow: http://stackoverflow.com/users/1179950/zen
+- Blog: https://www.darkerror.com
+- Github：https://github.com/YouenZeng
+- Stackoverflow: https://stackoverflow.com/users/1179950/zen
 
 # 自我评价
 
-熟练掌握.NET技术栈, 有解决相关问题的能力.
+9年.NET后端开发经验，熟悉.NET技术栈，有分析与解决相关问题的能力。
 
 # 工作经历
 
@@ -23,15 +25,15 @@
 
 - 优化现有代码流程，将假期额度发放功能由50分钟/5000人提升至2分钟/5000人，优化薪资系统对接的接口，从20分钟/5000人提升至1分钟/5000人
 - 合并部分iHCM platform上游代码，提高系统性能
-- 开发新功能
+- 开发新功能 (ASP.NET MVC/Web API, Windows Service, SQL Server, Rabbit MQ)
 - 研究原有的iHCM platform功能，适配接口，使其可以用于MyADP eLeave系统
 - 集成休假功能至微信公众号
 
-### MyADP系统 HR功能模块 Payroll模块
+### MyADP系统后端 HR功能模块 Payroll模块 休假(eLeave)模块
 
-- 参与设计后端项目框架(ASP.NET Web API 2，NHinernate，SQL Server,Redis，Hangfire)
-- 编码与代码审查
-- 设计了工作流引擎，与系统功能继承，并支持常规的审批工作流。
+- 参与设计后端项目框架(ASP.NET Web API 2，XUnit, NHinernate，SQL Server, Redis，Hangfire)
+- 编码与代码审阅工作
+- 设计工作流引擎，与系统功能集成，支持常规的审批工作流
 
 ### 数据导入服务
 
@@ -41,7 +43,6 @@
 
 ### 其他项目
 
-- NSAPI - 基于LDAP的用户认证接口服务
 - IDAM - MyADP系统使用的用户账号管理服务
 - GDPR Scheduler - 通过REST API调度Jenkins做一些GDPR相关的数据清理工作
 - DocHub - 基于Mongo GridFS的文件存储服务
@@ -66,11 +67,13 @@
 ## 中软国际 外派至 微软(中国)有限公司（2011年10月  ~ 2014年2月） 软件工程师
 
 - MSDN 论坛管理
-- 微软MCS（Microsoft Consulting Service）软件开发
+- MCS（Microsoft Consulting Service）软件开发
 
 # 专业技能
 
-- 8年后端开发经验
-- 后端框架：.NET Framework/.NET Core/ASP.NET/ASP.NET Core
-- 数据库相关：SQL Server/Redis
-- 版本管理、文档和自动化部署工具：Git/TFS/Altassian toolkit
+- 框架：.NET Framework/.NET Core/ ASP.NET / ASP.NET Core
+- 组件：RabbitMQ/Hangfire
+- 单元测试： xUnit
+- 协作工具： Rally/Jira/Confluence
+- 数据库：SQL Server/Redis/MongoDB
+- 版本管理和自动化部署工具：Git/Jenkins
